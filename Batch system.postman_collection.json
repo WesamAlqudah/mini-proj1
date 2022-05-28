@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "4a74e689-b46c-43aa-a058-f2e566aa2382",
+		"name": "Batch system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20268448"
+	},
+	"item": [
+		{
+			"name": "admin token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "batch-client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "02a2dbed-b45f-476d-9122-37620c64fc38",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/batch-system/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"batch-system",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "start batch",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJyWXhfSTZzZmFwR0kzTTZBR19IQi1yc2tiV2FOM0xmQXh6b0dUaVNrdlVvIn0.eyJleHAiOjE2NTM3NjczMTQsImlhdCI6MTY1Mzc2NzAxNCwianRpIjoiMzM2ODEyNzMtYWJjYi00ODA2LWEwN2MtZTY2ZGQxN2I4ZWY2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2JhdGNoLXN5c3RlbSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJjNGE2MmYwNC1jZGVlLTQzMDktYTQ5Yy0wOWM0OThmNmY3MzIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJiYXRjaC1jbGllbnQiLCJzZXNzaW9uX3N0YXRlIjoiNzE2ZmQzY2EtODlhZS00YWFlLTkxNjgtNWE1MGIyYjJjODE1IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiYWRtaW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJiYXRjaC1jbGllbnQiOnsicm9sZXMiOlsiYWRtaW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0In0.ycqlhWzNanc5aZJ4UMqx3RlIuKa1l1DFL0NaRoy3RRpGyFg8SiOI8BnjN1S_VDE38Jb54UqlwYM695o-ys3J6IiZ4qPXuR3KwiEAqwhb2lR_W1k24e45Bw1gAyMD0cY9DUrJJ__obYRt-NJJhdiPwES4D4rU362MMAFNIf8YJSrg_2-bV3jjX5nUhXjGJyZRyAoWaGWLRe5r9VAZDs_h9ZQhP39liCH1V8fOxed3bTdVuTKoqpVCN3DtdAVd7T6KFi6jFT7ZbYhQ76dHQocsxrJDeRHEMog0pUr1ILlNGI9ZDXs0YydsJxIdkBnNae7YmlHTvY7a7VNzDuYW7JxtjQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/batch/start",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"batch",
+						"start"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
